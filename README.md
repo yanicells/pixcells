@@ -14,13 +14,7 @@ I'm still a beginner just having fun and playing around with my camera. I try to
 
 ## Tech Stack
 
-- **Framework:** Next.js 15
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-- **UI Components:** shadcn/ui
-- **State Management:** Zustand
-- **Image Carousel:** Embla Carousel
+Next.js 15, TypeScript, Tailwind CSS, Framer Motion, shadcn/ui, Zustand, Embla Carousel
 
 ## Getting Started
 
@@ -87,4 +81,4 @@ pixcells/
 
 ---
 
-Built with Next.js and way too much coffee ☕
+Built with Next.js and way too much coffee and <del>Vibe</del> aura coding
