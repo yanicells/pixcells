@@ -4,7 +4,7 @@ My photography portfolio website showcasing moments captured with my Canon R50 +
 
 ## About
 
-I'm still a beginner just having fun and playing around with my camera. I try to be active with orgs as well, capturing events and random moments that catch my eye. Fair warning though, I can't post process to save my life, so what you see is pretty much straight out of camera (with maybe some light editing for when I am motivated).
+I'm still a beginner just having fun and playing around with my camera. I try to be active with orgs as well, capturing events and random moments that catch my eye. I can't post process to save my life, so what you see is pretty much straight out of camera (with maybe some light editing for when I feel motivated).
 
 ## Features
 
