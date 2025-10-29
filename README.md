@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# pixcells 📸
+
+A personal photography portfolio showcasing moments captured with my Canon R50 + 50mm f/1.8.
+
+## About
+
+I'm still a beginner just having fun and playing around with my camera. I try to be active with orgs as well, capturing events and random moments that catch my eye. Fair warning though, I can't post process to save my life, so what you see is pretty much straight out of camera (with maybe some light editing for when I am motivated).
+
+## Features
+
+- **Home page** previews all albums in a Netflix-style carousel
+- **Albums** can be viewed in grid or slide mode
+- **Videos** section for video content
+
+## Tech Stack
+
+- **Framework:** Next.js 15
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **UI Components:** shadcn/ui
+- **State Management:** Zustand
+- **Image Carousel:** Embla Carousel
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+
+```bash
+npm install
+```
+
+2. **Run the development server:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Open [http://localhost:3000](http://localhost:3000)** in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding New Albums
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Add your images** to `public/albums/[album-name]/`
 
-## Learn More
+2. **Create album file** in `lib/albums/[album-name].ts`:
 
-To learn more about Next.js, take a look at the following resources:
+```typescript
+export const myAlbum = {
+  album: [
+    { id: "3000", url: "/albums/my-album/1.jpg" },
+    { id: "3001", url: "/albums/my-album/2.jpg" },
+    // add more images...
+  ],
+};
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Update the store** in `store/albums.store.ts`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```typescript
+import { myAlbum } from "@/lib/albums/my-album";
 
-## Deploy on Vercel
+export const useAlbumsStore = create<AlbumsStore>(() => ({
+  albums: [
+    { name: "My Album", album: myAlbum },
+    // other albums...
+  ],
+}));
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+That's it. Your new album will show up everywhere automatically.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+pixcells/
+├── app/                    # Next.js app router pages
+├── components/
+│   ├── features/          # Feature-specific components
+│   ├── shared/            # Reusable components
+│   └── ui/                # shadcn/ui components
+├── lib/
+│   └── albums/            # Album data files
+├── public/
+│   └── albums/            # Image files
+└── store/                 # Zustand state management
+```
+
+---
+
+Built with Next.js and way too much coffee ☕
