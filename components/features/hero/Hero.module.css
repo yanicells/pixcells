@@ -1,0 +1,294 @@
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+.container {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.portraitWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.portraitWrapper::before {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        rgba(50, 80, 140, 0.4) 0%,
+        rgba(70, 110, 180, 0.3) 30%,
+        rgba(100, 150, 220, 0.2) 60%,
+        transparent 100%
+    );
+    filter: blur(20px);
+    z-index: -1;
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.portraitFrame {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        rgba(70, 110, 180, 0.15) 0%,
+        rgba(50, 80, 140, 0.1) 50%,
+        rgba(100, 150, 220, 0.05) 100%
+    );
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.portraitFrame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(
+        135deg,
+        rgba(100, 150, 220, 0.6),
+        rgba(70, 110, 180, 0.4),
+        rgba(50, 80, 140, 0.3),
+        rgba(100, 150, 220, 0.5)
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 1;
+}
+
+.portraitFrame::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(100, 150, 220, 0.3),
+        transparent 50%,
+        rgba(50, 80, 140, 0.2)
+    );
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.portraitFrame:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 20px 60px rgba(50, 80, 140, 0.4),
+        0 0 40px rgba(70, 110, 180, 0.3),
+        0 0 60px rgba(100, 150, 220, 0.2),
+        inset 0 0 30px rgba(100, 150, 220, 0.1);
+}
+
+.portraitFrame:hover::before {
+    background: linear-gradient(
+        135deg,
+        rgba(100, 150, 220, 0.8),
+        rgba(70, 110, 180, 0.6),
+        rgba(50, 80, 140, 0.5),
+        rgba(100, 150, 220, 0.7)
+    );
+}
+
+.portraitFrame:hover::after {
+    opacity: 0.8;
+}
+
+.portraitImage {
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.portraitFrame:hover .portraitImage {
+    transform: scale(1.05);
+}
+
+.badgeWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: rgba(240, 245, 235, 0.98);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.titleAccent {
+    background: linear-gradient(135deg,
+            rgba(70, 130, 220, 1),
+            rgba(120, 170, 240, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(230, 235, 225, 0.9);
+    margin-bottom: 2.5rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButtons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.primaryButton {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.primaryButton:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.secondaryButton {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.floatingElement {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle,
+            rgba(50, 80, 140, 0.3),
+            transparent);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .portraitWrapper::before {
+        width: 340px;
+        height: 340px;
+    }
+
+    .portraitFrame {
+        width: 280px;
+        height: 280px;
+    }
+
+    .portraitFrame::before {
+        padding: 3px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .portraitWrapper::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .portraitFrame {
+        width: 240px;
+        height: 240px;
+    }
+
+    .portraitWrapper {
+        margin-bottom: 1.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
