@@ -1,6 +1,6 @@
-# pixcells 📸
+# pixcells
 
-A personal photography portfolio showcasing moments captured with my Canon R50 + 50mm f/1.8.
+My photography portfolio website showcasing moments captured with my Canon R50 + 50mm f/1.8.
 
 ## About
 
