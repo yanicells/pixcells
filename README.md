@@ -14,7 +14,12 @@ I'm still a beginner just having fun and playing around with my camera. I try to
 
 ## Tech Stack
 
-Next.js 15, TypeScript, Tailwind CSS, Framer Motion, shadcn/ui, Zustand, Embla Carousel
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- shadcn/ui
+- Zustand
 
 ## Getting Started
 
