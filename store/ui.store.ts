@@ -18,3 +18,22 @@ export const useButtonStore = create<ButtonStore>()(
     }
   )
 )
+
+export type BackgroundStore = {
+  useSimpleBackground: boolean
+  toggleBackground: () => void
+}
+
+export const useBackgroundStore = create<BackgroundStore>()(
+  persist(
+    (set) => ({
+      useSimpleBackground: false,
+      toggleBackground: () =>
+        set((state) => ({ useSimpleBackground: !state.useSimpleBackground })),
+    }),
+    {
+      name: "background-store",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+)
