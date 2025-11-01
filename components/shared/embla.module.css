@@ -54,9 +54,21 @@
     width: 100%;
     /* Taller aspect on small screens to reduce bottom whitespace */
     aspect-ratio: 4 / 5;
-    max-height: 70vh;
+    max-height: 54vh;
     border-radius: 0.5rem;
     overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .embla__slide__img {
+        max-height: 58vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .embla__slide__img {
+        max-height: 60vh;
+    }
 }
 
 /* Portrait orientation - make slides even taller */
@@ -71,7 +83,7 @@
         /* Restore wider aspect on larger screens */
         aspect-ratio: 3 / 2;
     }
-    
+
     /* Portrait on larger screens - still taller but not as extreme */
     @media (orientation: portrait) {
         .embla__slide__img {
@@ -227,6 +239,7 @@
 }
 
 @media (min-width: 640px) {
+
     .embla__button--prev,
     .embla__button--next {
         width: 1.75rem;
@@ -235,6 +248,7 @@
 }
 
 @media (min-width: 768px) {
+
     .embla__button--prev,
     .embla__button--next {
         width: 2rem;
@@ -243,6 +257,7 @@
 }
 
 @media (min-width: 1024px) {
+
     .embla__button--prev,
     .embla__button--next {
         width: 2.25rem;
