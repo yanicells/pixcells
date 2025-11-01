@@ -5,10 +5,7 @@ import styles from '@/components/shared/embla.module.css'
 function AlbumGrid({ album }: { album: string }) {
   return (
     <div 
-      className={`${styles.container} w-full lg:w-[60vw] lg:mx-auto p-4`}
-      style={{
-        height: '78vh',
-      }}
+      className={`${styles.container} w-full lg:w-[60vw] lg:mx-auto p-4 h-[68vh] md:h-[74vh] lg:h-[76vh]`}
     >
       <div
         className="w-full h-full overflow-y-auto overflow-x-hidden pr-2"
