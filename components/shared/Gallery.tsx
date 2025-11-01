@@ -17,7 +17,7 @@ const Gallery = ({ album }: { album: string }) => {
             No images found
           </p>
           <p className="text-sm sm:text-base text-white/60">
-            This album is empty
+            {albumData ? 'This album is empty' : 'No favorites added yet'}
           </p>
         </div>
     )
