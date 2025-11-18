@@ -1,6 +1,8 @@
 import { create } from "zustand"
-import { preCollegeAlbum } from '@/lib/albums/pre-college'
+import { precollegeAlbum } from "@/lib/albums/precollege";
 import { asiyafestAlbum } from '@/lib/albums/asiyafest'
+import { binhiAlbum } from '@/lib/albums/binhi'
+import {featuredAlbum} from '@/lib/albums/featured'
 
 export interface AlbumImage {
   id: string
@@ -17,7 +19,9 @@ export type AlbumsStore = {
 
 export const useAlbumsStore = create<AlbumsStore>(() => ({
   albums: [
-    { name: "Pre-College", album: preCollegeAlbum },
+    { name: "Featured", album: featuredAlbum },
+    { name: "Pre-College", album: precollegeAlbum },
     { name: "Asiyafest", album: asiyafestAlbum },
+    { name: "Binhi", album: binhiAlbum },
   ],
-}))
+}));
