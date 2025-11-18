@@ -1,33 +1,40 @@
-'use client';
+"use client";
 
 import {
   Card,
   CardContent,
   CardTitle,
-  CardDescription
-} from "@/components/ui/card"
-import Image from "next/image"
-import { Play } from "lucide-react"
-import { motion } from "framer-motion"
+  CardDescription,
+} from "@/components/ui/card";
+import Image from "next/image";
+import { Play } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface VideoCardProps {
-  title: string
-  imageUrl: string
-  videoUrl: string
-  description: string
+  title: string;
+  imageUrl: string;
+  videoUrl: string;
+  description: string;
 }
 
-export default function VideoCard({ title, imageUrl, videoUrl, description }: VideoCardProps) {
+export default function VideoCard({
+  title,
+  imageUrl,
+  videoUrl,
+  description,
+}: VideoCardProps) {
   return (
-    <motion.div
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.3 }}
-    >
-      <a href={videoUrl} target="_blank" rel="noopener noreferrer" className="block">
+    <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
+      <a
+        href={videoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
         <div className="rounded-xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300 group">
           {/* Thumbnail image */}
           <div className="relative aspect-video bg-black/20 overflow-hidden">
-            <Image 
+            {/* <Image 
               src={imageUrl} 
               alt={title} 
               fill
@@ -35,8 +42,14 @@ export default function VideoCard({ title, imageUrl, videoUrl, description }: Vi
               quality={75}
               loading="lazy"
               className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-75" 
+            /> */}
+            <img
+              src={imageUrl}
+              alt={title}
+              loading="lazy"
+              className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-75 w-full h-full"
             />
-            
+
             {/* Play button overlay - always visible */}
             <div className="absolute inset-0 flex items-center justify-center opacity-100">
               <motion.div
@@ -61,5 +74,5 @@ export default function VideoCard({ title, imageUrl, videoUrl, description }: Vi
         </div>
       </a>
     </motion.div>
-  )
+  );
 }

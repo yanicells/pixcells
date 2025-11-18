@@ -46,15 +46,23 @@ function ImageHolder({ image, variant = 'grid' }: Props) {
   return (
     <>
       <div className="flex flex-col items-center" onClick={openModal}>
-        <Image
+        {/* <Image
           src={image.url}
           alt="Image"
           width={300}
           height={300}
           className='w-full aspect-square object-cover rounded-lg transform scale-100 group-hover:scale-105 hover:brightness-45 group-hover:brightness-75 transition duration-200'
+        /> */}
+        <img
+          src={image.url}
+          alt="Image"
+          width={300}
+          height={300}
+          loading="lazy"
+          className="w-full aspect-square object-cover rounded-lg transform scale-100 group-hover:scale-105 hover:brightness-45 group-hover:brightness-75 transition duration-200"
         />
       </div>
-      
+
       <ImageLightbox
         image={image}
         alt="Full size image"
@@ -62,7 +70,7 @@ function ImageHolder({ image, variant = 'grid' }: Props) {
         onClose={closeModal}
       />
     </>
-  )
+  );
 }
 
 export default ImageHolder

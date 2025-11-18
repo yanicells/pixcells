@@ -40,12 +40,12 @@ function ImageLightbox({ image, alt, isOpen, onClose }: ImageLightboxProps) {
       >
         <X size={24} />
       </button>
-      
+
       <div
         className="relative flex flex-col items-center gap-4"
         onClick={(e) => e.stopPropagation()}
       >
-        <Image
+        {/* <Image
           src={image.url}
           alt={alt}
           width={1200}
@@ -54,6 +54,14 @@ function ImageLightbox({ image, alt, isOpen, onClose }: ImageLightboxProps) {
           quality={100}
           unoptimized
           priority
+        /> */}
+        <img
+          src={image.url}
+          alt={alt}
+          width={1200}
+          height={1200}
+          loading="eager"
+          className="h-auto w-auto max-h-[70vh] max-w-[70vw] object-contain"
         />
         <div className="flex gap-4">
           <DownloadButton imageUrl={image.url} />
@@ -61,7 +69,7 @@ function ImageLightbox({ image, alt, isOpen, onClose }: ImageLightboxProps) {
       </div>
     </div>,
     document.body
-  )
+  );
 }
 
 export default ImageLightbox
