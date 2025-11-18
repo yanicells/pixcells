@@ -1,16 +1,16 @@
-import React from 'react'
-import Image from 'next/image'
-import styles from './embla.module.css'
+import React from "react";
+import Image from "next/image";
+import styles from "./embla.module.css";
 
 type PropType = {
-  selected: boolean
-  imageSrc: string
-  alt: string
-  onClick: () => void
-}
+  selected: boolean;
+  imageSrc: string;
+  alt: string;
+  onClick: () => void;
+};
 
 export const Thumb: React.FC<PropType> = (props) => {
-  const { selected, imageSrc, alt, onClick } = props
+  const { selected, imageSrc, alt, onClick } = props;
 
   return (
     <div
@@ -29,8 +29,13 @@ export const Thumb: React.FC<PropType> = (props) => {
           fill
           className="object-cover"
         /> */}
-        <Image src={imageSrc} alt={alt} fill className="object-cover" />
+        <img
+          src={imageSrc}
+          alt={alt}
+          loading="lazy"
+          className="object-cover w-full h-full"
+        />
       </button>
     </div>
   );
-}
+};
