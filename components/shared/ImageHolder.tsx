@@ -25,14 +25,20 @@ function ImageHolder({ image, variant = 'grid' }: Props) {
     return (
       <>
         <div className="relative w-full h-full" onClick={openModal}>
-          <Image
+          {/* <Image
             src={image.url}
             alt="Image"
             fill
             className='object-cover rounded-lg transform scale-100 group-hover:scale-110 hover:brightness-45 group-hover:brightness-75 transition duration-200'
+          /> */}
+          <img
+            src={image.url}
+            alt="Image"
+            loading="lazy"
+            className="object-cover rounded-lg transform scale-100 group-hover:scale-110 hover:brightness-45 group-hover:brightness-75 transition duration-200 w-full h-full"
           />
         </div>
-        
+
         <ImageLightbox
           image={image}
           alt="Full size image"
@@ -40,7 +46,7 @@ function ImageHolder({ image, variant = 'grid' }: Props) {
           onClose={closeModal}
         />
       </>
-    )
+    );
   }
 
   return (

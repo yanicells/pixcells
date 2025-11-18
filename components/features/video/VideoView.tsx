@@ -14,7 +14,7 @@ function VideoView() {
           />
           <VideoCard
             title="Still"
-            imageUrl="/02.PNG"
+            imageUrl="/02.png"
             videoUrl="https://youtu.be/L5VtwPlY2co "
             description="A Short Film on Losing Direction."
           />

@@ -14,22 +14,23 @@ export const Thumb: React.FC<PropType> = (props) => {
 
   return (
     <div
-      className={`${styles['embla-thumbs__slide']} ${
-        selected ? styles['embla-thumbs__slide--selected'] : ''
+      className={`${styles["embla-thumbs__slide"]} ${
+        selected ? styles["embla-thumbs__slide--selected"] : ""
       }`}
     >
       <button
         onClick={onClick}
         type="button"
-        className={styles['embla-thumbs__slide__button']}
+        className={styles["embla-thumbs__slide__button"]}
       >
-        <Image
+        {/* <Image
           src={imageSrc}
           alt={alt}
           fill
           className="object-cover"
-        />
+        /> */}
+        <Image src={imageSrc} alt={alt} fill className="object-cover" />
       </button>
     </div>
-  )
+  );
 }
